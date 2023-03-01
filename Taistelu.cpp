@@ -586,6 +586,9 @@ void Taistelu2(){
 
         while (true) {
 
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
             clear_screen();
             // Näyttää pelaajien HP
             std::cout << "Alkoholistin HP: " << pelaaja1 << "\n";
