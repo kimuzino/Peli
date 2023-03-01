@@ -1,11 +1,11 @@
 #include <string>
 #include <iostream>
-#include <windows.h>
-#include <conio.h>
 #include <stdlib.h>
 
 // Taistelun koodi
 #include "Taistelu.cpp"
+
+#include "WindowsLinux.h"
 
 
 int main() {
@@ -22,7 +22,7 @@ int main() {
     // ohjeet peliin
     if (tutorial == "Y" || tutorial == "y"){
         std::cout << "Ok, tässä on ohjeet.\n" << "\n";
-        Sleep (1000);
+        sleep_ms (1000);
         std::cout << "Kummallakin pelaajalla on 100hp.\n";
         std::cout << "Kummallakin on 3 liikettä ja 1 erikoisliike.\n";
         std::cout << "Erikoisliikkeen voi käyttää kun on osunut viholliseen 2 kertaa.\n";
@@ -38,31 +38,31 @@ int main() {
 
         if (jatka == "Y" || jatka == "y"){
             std::cout << "Ok, aloitetaan peli.\n" << "\n";
-            Sleep (2000);
-            system("cls");
+            sleep_ms (2000);
+            clear_screen();;
         }
 
         if (jatka == "N" || jatka == "n"){
             std::cout << "Ok, sinulla on 10 sekuntia aikaa.\n" << "\n";
-            Sleep (10000);
-            system("cls");
+            sleep_ms (10000);
+            clear_screen();;
         }
     }
 
     if (tutorial == "N" || tutorial == "n"){
         std::cout << "Ok, aloitetaan peli.\n" << "\n";
-        Sleep (2000);
-        system("cls");
+        sleep_ms (2000);
+        clear_screen();;
     }
     
 
     // Aloitus teksti
     std::cout << "Terve tuloa taistelemaan!\n";
-    Sleep (1000);
+    sleep_ms (1000);
     std::cout << "Tässä pelissä taistelet tietokoneen kanssa.\n";
-    Sleep (1000);
+    sleep_ms (1000);
     std::cout << "Voit valita Pommittajan tai Alkoholistin.\n" << "\n";
-    Sleep (1000);
+    sleep_ms (1000);
 
 
     // Pommittajan voimat
@@ -77,7 +77,7 @@ int main() {
 
     // Alkoholistin voimat
     std::cout << "\n";
-    Sleep (5000);
+    sleep_ms (5000);
     std::cout << "Alkoholisti antaa sinulle nämä voimat.\n";
     std::cout << "\n";
    
@@ -89,27 +89,33 @@ int main() {
 
     // Hahmon valinta
     std::cout << "\n";
-    Sleep (5000);
+    sleep_ms (5000);
     std::cout << "Kumman hahmon haluat Pommittajan(1) vai Alkoholistin(2)\n";
-    Sleep (1000);
+    sleep_ms (1000);
     std::cout << "Valitse hahmo: ";
     std::cin >> hahmo;
 
     if (hahmo == 1) {
         std::cout << "\n";
         std::cout << "Valitsit Pommittajan.\n";
-        Sleep (1000);
+        sleep_ms (1000);
         std::cout << "Sinua siirretään taisteluun.\n";
-        Sleep (2000);
+        sleep_ms (2000);
         Taistelu1();
     }
 
     if (hahmo == 2) {
         std::cout << "\n";
         std::cout << "Valitsit Alkoholistin.\n";
-        Sleep (1000);
+        sleep_ms (1000);
         std::cout << "Sinua siirretään taisteluun.\n";
-        Sleep (2000);
+        sleep_ms (2000);
         Taistelu2();
+    }
+
+    else {
+        std::cout << "Haista vitu" << "\n";
+        sleep_ms (1000);
+        exit(0);
     }
 }
