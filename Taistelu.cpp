@@ -8,8 +8,6 @@
 
 #include "WindowsLinux.h"
 
-#include "Toiminnot.cpp"
-
 void Taistelu1();
 void Taistelu2();
 
