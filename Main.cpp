@@ -6,7 +6,6 @@
 #include "Taistelu.cpp"
 
 #include "WindowsLinux.h"
-#include "Voitto.cpp"
 
 
 int main() {
