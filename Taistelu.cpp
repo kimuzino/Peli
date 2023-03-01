@@ -66,107 +66,113 @@ void Taistelu1(){
 
         if (pelaaja2 > 100){pelaaja2 = 100;}
 
-
+        
         // Jos pelaajien HP on alle 0 niin peli loppuu
         if (pelaaja2 <= 0) {
-            clear_screen();
-            std::cout << "Pommittaja voitti!\n";
-            sleep_ms (1000);
-            std::cout << "Onneksi olkoon!\n";
-            sleep_ms (2000);
-            clear_screen();
-            std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
-            std::cin >> kysy;
 
-            if (kysy == 'Y' || kysy == 'y') {
-                std::cout << "\n";
-                std::cout << "Valitse hahmosi uudelleen...\n";
-                sleep_ms (1000);
-                std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
-                sleep_ms (1000);
-                std::cout << "Valitse hahmosi: ";
-                std::cin >> hahmo;
 
-                if  (hahmo == 1) {
+                clear_screen();
+                std::cout << "Pommittaja voitti!\n";
+                sleep_ms (1000);
+                std::cout << "Onneksi olkoon!\n";
+                sleep_ms (2000);
+                clear_screen();
+                std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
+                std::cin >> kysy;
+
+            while (true){
+                    
+                if (kysy == 'Y' || kysy == 'y') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Valitse hahmosi uudelleen...\n";
                     sleep_ms (1000);
-                    Taistelu1();
-                    break;
+                    std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
+                    sleep_ms (1000);
+                    std::cout << "Valitse hahmosi: ";
+                    std::cin >> hahmo;
+
+                    if  (hahmo == 1) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu1();
+                        break;
+                    }
+
+                    if (hahmo == 2) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu2();
+                        break;
+                    }
                 }
 
-                if (hahmo == 2) {
+                if (kysy == 'N' || kysy == 'n') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Peli suljetaan...\n";
                     sleep_ms (1000);
-                    Taistelu2();
-                    break;
+                    exit(0);
                 }
-            }
 
-            if (kysy == 'N' || kysy == 'n') {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
-            }
-
-            else {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
+                else {
+                    clear_screen();
+                    continue;
+                }
             }
         }
 
         if (pelaaja1 <= 0) {
-            clear_screen();
-            std::cout << "Alkoholisti voitti!\n" << "\n";
-            sleep_ms (1000);
-            std::cout << "Onnea seuraavalle kerralle!\n";
-            sleep_ms (2000);
-            clear_screen();
-            std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
-            std::cin >> kysy;
 
-            if (kysy == 'Y' || kysy == 'y') {
-                std::cout << "\n";
-                std::cout << "Valitse hahmosi uudelleen...\n";
+                clear_screen();
+                std::cout << "Alkoholisti voitti!\n" << "\n";
                 sleep_ms (1000);
-                std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
-                sleep_ms (1000);
-                std::cout << "Valitse hahmosi: ";
-                std::cin >> hahmo;
+                std::cout << "Onnea seuraavalle kerralle!\n";
+                sleep_ms (2000);
+                clear_screen();
+                std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
+                std::cin >> kysy;
 
-                if  (hahmo == 1) {
+
+            while (true){
+
+                if (kysy == 'Y' || kysy == 'y') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Valitse hahmosi uudelleen...\n";
                     sleep_ms (1000);
-                    Taistelu1();
-                    break;
+                    std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
+                    sleep_ms (1000);
+                    std::cout << "Valitse hahmosi: ";
+                    std::cin >> hahmo;
+
+                    if  (hahmo == 1) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu1();
+                        break;
+                    }
+
+                    if (hahmo == 2) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu2();
+                        break;
+                    }
                 }
 
-                if (hahmo == 2) {
+                if (kysy == 'N' || kysy == 'n') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Peli suljetaan...\n";
                     sleep_ms (1000);
-                    Taistelu2();
-                    break;
+                    exit(0);
                 }
-            }
 
-            if (kysy == 'N' || kysy == 'n') {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
-            }
-
-            else {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
+                else {
+                    clear_screen();
+                    continue;
+                }
             }
         }
 
@@ -183,12 +189,12 @@ void Taistelu1(){
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
             // Aloitus teksti
-            std::cout << "Liikkeiden käyttö määrä\n" "Normaali liikkeet: " << n << "\n" "Erikoisliikkeet: " << x << "\n";
+            std::cout << "Liikkeiden käyttö määrä\n" "Normaali liikkeet (N) : " << n << "\n" "Erikoisliikkeet (E) : " << x << "\n";
             std::cout << "Valitse liike minkä käytäy\n" << "\n";
             std::cout << "1. Nyrkki (10dmg)\n";
-            std::cout << "2. Kotitekoinen pommi (35dmg) (2N)\n";
-            std::cout << "3. (Ultimate) Ydinpommi (75dmg) (2N ja 1E)\n";
-            std::cout << "4. Erikoisliike: Adrenaliini piikki (+35hp) (2N)\n";
+            std::cout << "2. Kotitekoinen pommi (35dmg) (2N) (-1N)\n";
+            std::cout << "3. (Ultimate) Ydinpommi (75dmg) (2N ja 1E) (-2N -1E)\n";
+            std::cout << "4. Erikoisliike: Adrenaliini piikki (+35hp) (2N) (-2N)\n";
             std::cout << "Valitse liike: ";
             std::cin >> isku;
 
@@ -301,53 +307,57 @@ void Taistelu1(){
 
 
         if (pelaaja2 <= 0) {
-            clear_screen();
-            std::cout << "Pommittaja voitti!\n" << "\n";
-            sleep_ms (1000);
-            std::cout << "Onneksi olkoon!\n";
-            sleep_ms (2000);
-            clear_screen();
-            std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
-            std::cin >> kysy;
 
-            if (kysy == 'Y' || kysy == 'y') {
-                std::cout << "\n";
-                std::cout << "Valitse hahmosi uudelleen...\n";
+           
+                clear_screen();
+                std::cout << "Pommittaja voitti!\n" << "\n";
                 sleep_ms (1000);
-                std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
-                sleep_ms (1000);
-                std::cout << "Valitse hahmosi: ";
-                std::cin >> hahmo;
+                std::cout << "Onneksi olkoon!\n";
+                sleep_ms (2000);
+                clear_screen();
+                std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
+                std::cin >> kysy;
 
-                if  (hahmo == 1) {
+
+            while (true){
+
+                if (kysy == 'Y' || kysy == 'y') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Valitse hahmosi uudelleen...\n";
                     sleep_ms (1000);
-                    Taistelu1();
-                    break;
+                    std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
+                    sleep_ms (1000);
+                    std::cout << "Valitse hahmosi: ";
+                    std::cin >> hahmo;
+
+                    if  (hahmo == 1) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu1();
+                        break;
+                    }
+
+                    if (hahmo == 2) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu2();
+                        break;
+                    }
                 }
 
-                if (hahmo == 2) {
+                if (kysy == 'N' || kysy == 'n') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Peli suljetaan...\n";
                     sleep_ms (1000);
-                    Taistelu2();
-                    break;
+                    exit(0);
                 }
-            }
 
-            if (kysy == 'N' || kysy == 'n') {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
-            }
-
-            else {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
+                else {
+                    clear_screen();
+                    continue;
+                }
             }
         }
 
@@ -482,104 +492,111 @@ void Taistelu2(){
 
         // Jos pelaajien HP on alle 0 niin peli loppuu
         if (pelaaja2 <= 0) {
-            clear_screen();
-            std::cout << "Alkoholisti voitti!\n";
-            sleep_ms (1000);
-            std::cout << "Onneksi olkoon!\n";
-            sleep_ms (2000);
-            clear_screen();
-            std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
-            std::cin >> kysy;
 
-            if (kysy == 'Y' || kysy == 'y') {
-                std::cout << "\n";
-                std::cout << "Valitse hahmosi uudelleen...\n";
+            
+                clear_screen();
+                std::cout << "Alkoholisti voitti!\n";
                 sleep_ms (1000);
-                std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
-                sleep_ms (1000);
-                std::cout << "Valitse hahmosi: ";
-                std::cin >> hahmo;
+                std::cout << "Onneksi olkoon!\n";
+                sleep_ms (2000);
+                clear_screen();
+                std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
+                std::cin >> kysy;
 
-                if  (hahmo == 1) {
+
+            while (true){
+
+                if (kysy == 'Y' || kysy == 'y') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Valitse hahmosi uudelleen...\n";
                     sleep_ms (1000);
-                    Taistelu1();
-                    break;
+                    std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
+                    sleep_ms (1000);
+                    std::cout << "Valitse hahmosi: ";
+                    std::cin >> hahmo;
+
+                    if  (hahmo == 1) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu1();
+                        break;
+                    }
+
+                    if (hahmo == 2) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu2();
+                        break;
+                    }
+
                 }
 
-                if (hahmo == 2) {
+                if (kysy == 'N' || kysy == 'n') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Peli suljetaan...\n";
                     sleep_ms (1000);
-                    Taistelu2();
-                    break;
+                    exit(0);
                 }
 
+                else {
+                    clear_screen();
+                    continue;
+                }
             }
-
-            if (kysy == 'N' || kysy == 'n') {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
-            }
-
-            else {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
-            }
-
         }
 
         if (pelaaja1 <= 0) {
-            clear_screen();
-            std::cout << "Pommittaja voitti!\n";
-            sleep_ms (1000);
-            std::cout << "Onnea seuraavalle kierrokselle!\n";
-            sleep_ms (2000);
-            clear_screen();
-            std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
-            std::cin >> kysy;
 
-            if (kysy == 'Y' || kysy == 'y') {
-                std::cout << "\n";
-                std::cout << "Valitse hahmosi uudelleen...\n";
+            
+                clear_screen();
+                std::cout << "Pommittaja voitti!\n";
                 sleep_ms (1000);
-                std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
-                sleep_ms (1000);
-                std::cout << "Valitse hahmosi: ";
-                std::cin >> hahmo;
+                std::cout << "Onnea seuraavalle kierrokselle!\n";
+                sleep_ms (2000);
+                clear_screen();
+                std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
+                std::cin >> kysy;
 
-                if  (hahmo == 1) {
+
+            while (true){
+
+                if (kysy == 'Y' || kysy == 'y') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Valitse hahmosi uudelleen...\n";
                     sleep_ms (1000);
-                    Taistelu1();
+                    std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
+                    sleep_ms (1000);
+                    std::cout << "Valitse hahmosi: ";
+                    std::cin >> hahmo;
+
+                    if  (hahmo == 1) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu1();
+                    }
+
+                    if (hahmo == 2) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu2();
+                    }
                 }
 
-                if (hahmo == 2) {
+                if (kysy == 'N' || kysy == 'n') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Peli suljetaan...\n";
                     sleep_ms (1000);
-                    Taistelu2();
+                    exit(0);
                 }
-            }
 
-            if (kysy == 'N' || kysy == 'n') {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
-            }
-
-            else {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
+                else {
+                    clear_screen();
+                    continue;
+                }
             }
         }
         
@@ -595,12 +612,12 @@ void Taistelu2(){
             std::cout << "Pommittajan HP: " << pelaaja2 << "\n" << "\n";
 
             // Aloitus teksti
-            std::cout << "Liikkeiden käyttö määrä\n" "Normaali liikkeet: " << n << "\n" "Erikoisliikkeet: " << x << "\n";
+            std::cout << "Liikkeiden käyttö määrä\n" "Normaali liikkeet (N) : " << n << "\n" "Erikoisliikkeet (E) : " << x << "\n";
             std::cout << "Valitse liike minkä käytäy\n" << "\n";
             std::cout << "1. Puukotus (20dmg)\n";
-            std::cout << "2. Pullon heitto (35dmg) (2N) \n";
-            std::cout << "3. (Ultimate) Isän käsi (50dmg) (2N ja 1E)\n";
-            std::cout << "4. Erikois liike. Kalja (+30hp) (2n)\n";
+            std::cout << "2. Pullon heitto (35dmg) (2N) (-1N)\n";
+            std::cout << "3. (Ultimate) Isän käsi (50dmg) (2N ja 1E) (-2N -1E)\n";
+            std::cout << "4. Erikois liike. Kalja (+30hp) (2n) (-2N)\n";
             std::cout << "Valitse liike: ";
             std::cin >> isku;
 
@@ -703,51 +720,55 @@ void Taistelu2(){
 
 
         if (pelaaja2 <= 0) {
-            clear_screen();
-            std::cout << "Alkoholisti voitti!\n";
-            sleep_ms (1000);
-            std::cout << "Onneksi olkoon!\n";
-            sleep_ms (2000);
-            clear_screen();
-            std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
-            std::cin >> kysy;
 
-            if (kysy == 'Y' || kysy == 'y') {
-                std::cout << "\n";
-                std::cout << "Valitse hahmosi uudelleen...\n";
+            
+                clear_screen();
+                std::cout << "Alkoholisti voitti!\n";
                 sleep_ms (1000);
-                std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
-                sleep_ms (1000);
-                std::cout << "Valitse hahmosi: ";
-                std::cin >> hahmo;
+                std::cout << "Onneksi olkoon!\n";
+                sleep_ms (2000);
+                clear_screen();
+                std::cout << "Haluatko pelata uudelleen? (Y/N) : ";
+                std::cin >> kysy;
 
-                if  (hahmo == 1) {
+
+            while (true){
+
+                if (kysy == 'Y' || kysy == 'y') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Valitse hahmosi uudelleen...\n";
                     sleep_ms (1000);
-                    Taistelu1();
+                    std::cout << "1. Pommittaja  |  2. Alkoholisti\n";
+                    sleep_ms (1000);
+                    std::cout << "Valitse hahmosi: ";
+                    std::cin >> hahmo;
+
+                    if  (hahmo == 1) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu1();
+                    }
+
+                    if (hahmo == 2) {
+                        std::cout << "\n";
+                        std::cout << "Peli alkaa uudelleen...\n";
+                        sleep_ms (1000);
+                        Taistelu2();
+                    }
                 }
 
-                if (hahmo == 2) {
+                if (kysy == 'N' || kysy == 'n') {
                     std::cout << "\n";
-                    std::cout << "Peli alkaa uudelleen...\n";
+                    std::cout << "Peli suljetaan...\n";
                     sleep_ms (1000);
-                    Taistelu2();
+                    exit(0);
                 }
-            }
 
-            if (kysy == 'N' || kysy == 'n') {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
-            }
-
-            else {
-                std::cout << "\n";
-                std::cout << "Peli suljetaan...\n";
-                sleep_ms (1000);
-                exit(0);
+                else {
+                    clear_screen();
+                    continue;
+                }
             }
         }
 
